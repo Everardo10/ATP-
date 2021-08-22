@@ -1,0 +1,38 @@
+package ATP8; 
+import ATP8.Conexao;
+import ATP8.Metodos;
+import java.sql.Statement;
+import java.sql.SQLException;
+
+public class Main{
+    public static void main(String args[])throws Exception{
+       
+        Conexao conexao = new Conexao();
+        conexao.abrirConexao();
+        Metodos metodos = new Metodos(conexao.getConnection());
+       
+        /*Aluno aluno = new Aluno();               
+        aluno.setNome("Alonso");
+        aluno.setMatricula(15);
+        metodos.adicionaAluno(aluno);*/
+        Aluno[] aluno = new Aluno[5];              
+        aluno[0] = new Aluno();
+        aluno[1] = new Aluno();
+        aluno[2] = new Aluno();
+        aluno[3] = new Aluno();
+        aluno[4] = new Aluno();
+        
+        aluno[0].setNome("Thais");
+        aluno[0].setMatricula(5);
+        aluno[1].setNome("Raissa");
+        aluno[1].setMatricula(6);
+        aluno[2].setNome("Vitor");
+        aluno[2].setMatricula(7);
+        aluno[3].setNome("André");
+        aluno[3].setMatricula(8);
+        aluno[4].setNome("Gustavo");
+        aluno[4].setMatricula(9);
+         metodos.adicionarListaAlunos(aluno);
+}
+}
+ 
